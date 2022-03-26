@@ -81,7 +81,7 @@ Pré-requis du serveur distant ou local:
  - Apache, Nginx ou équivalent
  - PHP
 
-Si vous n'avez pas ces pré-requis vous pouvez consulter les informations pour leurs installation [ici](./images/server_web_php.md).
+Si vous n'avez pas ces pré-requis vous pouvez consulter les informations pour leurs installation [ici](./server_web_php.md).
 
 Nous considérons que vous avez une installation Web/PHP fonctionnel pour la suite.
 
