@@ -22,7 +22,7 @@ class Splash {
 
     async startAnimation() {
         let splashes = [
-            { "message": "Je.... vie...", "author": "Luuxis" }
+            { "message": "I.... live...", "author": "Luuxis" }
         ];
         let splash = splashes[Math.floor(Math.random() * splashes.length)];
         this.splashMessage.textContent = splash.message;
@@ -47,9 +47,9 @@ class Splash {
             if (res.maintenance) return this.shutdown(res.maintenance_message);
             else this.checkUpdate();
         }).catch(err => {
-            console.log("impossible de charger le config.json");
+            console.log("Can't load config.json");
             console.log(err);
-            return this.shutdown("Aucune connexion internet détectée,<br>veuillez réessayer ultérieurement.");
+            return this.shutdown("No internet detected,<br>try again later.");
         })
     }
 
@@ -66,12 +66,12 @@ class Splash {
         });
 
         this.toggleProgress();
-        this.setStatus(`Téléchargement de la mise à jour`);
+        this.setStatus(`Downloading last update`);
         const file = await updater.download(manifest);
-        this.setStatus(`Décompression de la mise à jour`);
+        this.setStatus(`Unpacking the update`);
         await updater.unpack(file);
         this.toggleProgress();
-        this.setStatus(`Redémarrage`);
+        this.setStatus(`Restarting`);
         await updater.restartToSwap();
     }
 
